@@ -19,6 +19,9 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = ProductsListViewController.instantiate()
+        let interactor = ProductsListInteractor(service: APIClient())
+        let presenter = ProductsListPresenter(view: vc, interactor: interactor)
+        vc.presenter = presenter
         navigationController.pushViewController(vc, animated: false)
     }
 }

@@ -13,6 +13,11 @@ protocol ProductsListInteractorProtocol: AnyObject {
 
 class ProductsListInteractor {
     
+    let service: ProductsListAPI
+    
+    init(service: ProductsListAPI) {
+        self.service = service
+    }
 }
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
