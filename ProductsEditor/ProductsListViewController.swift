@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ProductsListViewController: UIViewController, Storyboarded {
+    
+    static let storyboardName = "Main"
+    static let storyboardId = "ProductsListViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

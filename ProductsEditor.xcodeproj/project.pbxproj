@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A737EBC2254DF80900561D1B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC1254DF80900561D1B /* MainCoordinator.swift */; };
+		A737EBC8254DF82200561D1B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC7254DF82200561D1B /* Coordinator.swift */; };
+		A737EBD0254DFED900561D1B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBCF254DFED900561D1B /* Storyboarded.swift */; };
 		A7A7F407254DF0D900D2CCCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7F406254DF0D900D2CCCE /* AppDelegate.swift */; };
 		A7A7F409254DF0D900D2CCCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7F408254DF0D900D2CCCE /* SceneDelegate.swift */; };
-		A7A7F40B254DF0D900D2CCCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7F40A254DF0D900D2CCCE /* ViewController.swift */; };
+		A7A7F40B254DF0D900D2CCCE /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A7F40A254DF0D900D2CCCE /* ProductsListViewController.swift */; };
 		A7A7F40E254DF0D900D2CCCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A7F40C254DF0D900D2CCCE /* Main.storyboard */; };
 		A7A7F410254DF0DA00D2CCCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A7F40F254DF0DA00D2CCCE /* Assets.xcassets */; };
 		A7A7F413254DF0DA00D2CCCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A7F411254DF0DA00D2CCCE /* LaunchScreen.storyboard */; };
@@ -39,10 +42,13 @@
 		5245FA03BC9C17645614867D /* Pods_ProductsEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductsEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981DCE265D70C28D90DF6C82 /* Pods-ProductsEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsEditor.debug.xcconfig"; path = "Target Support Files/Pods-ProductsEditor/Pods-ProductsEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		99AAD3D0FD975156208B9468 /* Pods-ProductsEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsEditor.release.xcconfig"; path = "Target Support Files/Pods-ProductsEditor/Pods-ProductsEditor.release.xcconfig"; sourceTree = "<group>"; };
+		A737EBC1254DF80900561D1B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A737EBC7254DF82200561D1B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A737EBCF254DFED900561D1B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		A7A7F403254DF0D900D2CCCE /* ProductsEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductsEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A7F406254DF0D900D2CCCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A7F408254DF0D900D2CCCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7A7F40A254DF0D900D2CCCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7A7F40A254DF0D900D2CCCE /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
 		A7A7F40D254DF0D900D2CCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7A7F40F254DF0DA00D2CCCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7A7F412254DF0DA00D2CCCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +95,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A737EBC6254DF81500561D1B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A737EBC7254DF82200561D1B /* Coordinator.swift */,
+				A737EBCF254DFED900561D1B /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A7A7F3FA254DF0D900D2CCCE = {
 			isa = PBXGroup;
 			children = (
@@ -114,13 +129,15 @@
 		A7A7F405254DF0D900D2CCCE /* ProductsEditor */ = {
 			isa = PBXGroup;
 			children = (
+				A737EBC6254DF81500561D1B /* Protocols */,
 				A7A7F406254DF0D900D2CCCE /* AppDelegate.swift */,
 				A7A7F408254DF0D900D2CCCE /* SceneDelegate.swift */,
-				A7A7F40A254DF0D900D2CCCE /* ViewController.swift */,
+				A7A7F40A254DF0D900D2CCCE /* ProductsListViewController.swift */,
 				A7A7F40C254DF0D900D2CCCE /* Main.storyboard */,
 				A7A7F40F254DF0DA00D2CCCE /* Assets.xcassets */,
 				A7A7F411254DF0DA00D2CCCE /* LaunchScreen.storyboard */,
 				A7A7F414254DF0DA00D2CCCE /* Info.plist */,
+				A737EBC1254DF80900561D1B /* MainCoordinator.swift */,
 			);
 			path = ProductsEditor;
 			sourceTree = "<group>";
@@ -149,7 +166,6 @@
 				981DCE265D70C28D90DF6C82 /* Pods-ProductsEditor.debug.xcconfig */,
 				99AAD3D0FD975156208B9468 /* Pods-ProductsEditor.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -327,9 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A7F40B254DF0D900D2CCCE /* ViewController.swift in Sources */,
+				A7A7F40B254DF0D900D2CCCE /* ProductsListViewController.swift in Sources */,
+				A737EBC2254DF80900561D1B /* MainCoordinator.swift in Sources */,
+				A737EBC8254DF82200561D1B /* Coordinator.swift in Sources */,
 				A7A7F407254DF0D900D2CCCE /* AppDelegate.swift in Sources */,
 				A7A7F409254DF0D900D2CCCE /* SceneDelegate.swift in Sources */,
+				A737EBD0254DFED900561D1B /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
