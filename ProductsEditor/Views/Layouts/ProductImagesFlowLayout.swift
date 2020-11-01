@@ -22,7 +22,7 @@ class ProductImagesFlowLayout: UICollectionViewFlowLayout {
         super.init()
         scrollDirection = .horizontal
         minimumLineSpacing = 50
-        itemSize = CGSize(width: 70, height: 70)
+        itemSize = CGSize(width: 90, height: 90)
     }
     
     required init?(coder aDecoder: NSCoder) {

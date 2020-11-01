@@ -14,10 +14,16 @@ class ProductImageCell: UICollectionViewCell, ReusableView {
     static let defaultReuseId = "ProductImageCell"
     
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
     
+    var deleteClosure: (()->())?
     
-    func setupContent(_ url: String) {
+    func setupContent(_ url: String, isEditing: Bool) {
         productImageView.kf.setImage(with: URL(string: url))
+        deleteButton.isHidden = !isEditing
     }
     
+    @IBAction func didTapDeleteButton(_ sender: Any) {
+        deleteClosure?()
+    }
 }

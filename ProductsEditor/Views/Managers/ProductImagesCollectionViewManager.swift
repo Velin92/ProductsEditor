@@ -11,6 +11,9 @@ import UIKit
 class ProductImagesCollectionViewManager: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var dataSource: [String] = []
+    var isEditing = false
+    
+    var deleteImageClosure: ((Int)->())?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dataSource.count
@@ -18,7 +21,10 @@ class ProductImagesCollectionViewManager: NSObject, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ProductImageCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setupContent(dataSource[indexPath.item])
+        cell.setupContent(dataSource[indexPath.item], isEditing: isEditing)
+        cell.deleteClosure = { [weak self] in
+            self?.deleteImageClosure?(indexPath.item)
+        }
         return cell
     }
 }

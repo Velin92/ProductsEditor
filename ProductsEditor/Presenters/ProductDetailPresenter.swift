@@ -11,11 +11,13 @@ protocol ProductDetailPresenterProtocol: AnyObject {
     func loadView()
     func browseProduct()
     func manageOperation()
+    func deleteImage(at index: Int)
+    func resetView()
 }
 
 class ProductDetailPresenter {
     
-    typealias ProductDetailView = ProductDetailViewProtocol
+    typealias ProductDetailView = ProductDetailViewProtocol & AlertDisplayer & LoaderDisplayer
     weak var view: ProductDetailView!
     let interactor: ProductDetailInteractorProtocol
     
@@ -32,6 +34,17 @@ class ProductDetailPresenter {
 }
 
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
+    
+    func resetView() {
+        view.showAlert(title: "Undo", description: "Are you sure you want to undo the editing operation?", confirmation: "Undo", cancel: "Cancel", isDestructive: false, confirmCompletion: { [weak self] in
+            self?.loadView()
+        }, cancelCompletion: nil)
+    }
+    
+    func deleteImage(at index: Int) {
+        viewState.images.remove(at: index)
+        updateView()
+    }
     
     func manageOperation() {
         if (viewState.operationState == .displaying) {

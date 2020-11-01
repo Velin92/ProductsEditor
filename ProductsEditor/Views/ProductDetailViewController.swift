@@ -14,7 +14,7 @@ protocol ProductDetailViewProtocol: AnyObject {
     func startEditing()
 }
 
-class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismisser {
+class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismisser, AlertDisplayer, LoaderDisplayer{
     
     static let storyboardName = "Main"
     static var storyboardId = "ProductDetailViewController"
@@ -25,6 +25,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     @IBOutlet weak var operationButton: UIBarButtonItem!
     @IBOutlet weak var browseButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
     
     var presenter: ProductDetailPresenterProtocol!
     let productImagesCollectionViewManager = ProductImagesCollectionViewManager()
@@ -48,6 +49,10 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     @IBAction func didTapDeleteButton(_ sender: Any) {
     }
     
+    @IBAction func didTapUndoButton(_ sender: Any) {
+        presenter.resetView()
+    }
+    
     private func setupTextViews() {
         productTextView.delegate = self
         merchantTextView.delegate = self
@@ -58,6 +63,9 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
         productImagesCollectionView.contentInsetAdjustmentBehavior = .always
         productImagesCollectionView.dataSource = productImagesCollectionViewManager
         productImagesCollectionView.delegate = productImagesCollectionViewManager
+        productImagesCollectionViewManager.deleteImageClosure =  { [weak self] index in
+            self?.presenter.deleteImage(at: index)
+        }
         productImagesCollectionView.reloadData()
     }
 }
@@ -102,15 +110,19 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
     }
     
     private func updateDisplayingView(viewState: ProductDetailViewState) {
+        productImagesCollectionViewManager.isEditing = false
         operationButton.title = "Edit"
         browseButton.isHidden = false
         deleteButton.isHidden = true
+        undoButton.isHidden = true
         updateInfos(productName: viewState.productName, merchantName: viewState.merchantName)
     }
     
     private func updateEditingView(viewState: ProductDetailViewState) {
+        productImagesCollectionViewManager.isEditing = true
         browseButton.isHidden = true
         deleteButton.isHidden = false
+        undoButton.isHidden = false
         operationButton.title = "Done"
         productTextView.isEditable = true
         merchantTextView.isEditable = true

@@ -94,10 +94,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-r9-Tfi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="510.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-N7-IL8">
-                                                <rect key="frame" x="20" y="252" width="374" height="238.5"/>
+                                                <rect key="frame" x="20" y="252" width="374" height="288.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-wb-Nza">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -145,8 +145,28 @@
                                                             <action selector="didTapBrowseButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="U5I-XI-SxJ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-so-Jmm">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09a-0C-fCf">
                                                         <rect key="frame" x="37.5" y="198.5" width="299" height="40"/>
+                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="5gx-eG-mtc"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                        <state key="normal" title="Undo"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapUndoButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="tvO-RE-BBs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-so-Jmm">
+                                                        <rect key="frame" x="37.5" y="248.5" width="299" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="uWd-8x-qTi"/>
@@ -162,7 +182,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapBrowseButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="QfG-X7-G8w"/>
                                                             <action selector="didTapDeleteButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="fRO-0u-0xa"/>
                                                         </connections>
                                                     </button>
@@ -171,6 +190,7 @@
                                                     <constraint firstItem="Xhg-1b-x1U" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="2xr-eK-sG8"/>
                                                     <constraint firstItem="S8P-so-Jmm" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="3fZ-kP-ZO6"/>
                                                     <constraint firstItem="Reo-Fi-J2D" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="9hQ-dz-PhF"/>
+                                                    <constraint firstItem="09a-0C-fCf" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="QkI-Cg-gAo"/>
                                                     <constraint firstItem="KqF-M7-GUo" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="U4q-IE-qeB"/>
                                                     <constraint firstItem="aCc-Ru-lzy" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="t2I-wu-UVQ"/>
                                                     <constraint firstItem="3nF-wb-Nza" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="v6M-T7-vnO"/>
@@ -194,18 +214,36 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XaZ-I7-YVh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                    <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muB-bF-7xg">
+                                                                    <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="OAQ-1q-0wk"/>
+                                                                        <constraint firstAttribute="width" secondItem="muB-bF-7xg" secondAttribute="height" multiplier="1:1" id="sLw-WA-WI3"/>
+                                                                    </constraints>
+                                                                    <color key="tintColor" systemColor="systemRedColor"/>
+                                                                    <state key="normal" image="xmark.circle.fill" catalog="system"/>
+                                                                    <connections>
+                                                                        <action selector="didTapDeleteButton:" destination="3di-YR-Me9" eventType="touchUpInside" id="xEZ-kz-t15"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="XaZ-I7-YVh" secondAttribute="bottom" id="Csj-Mm-FSW"/>
-                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="leading" secondItem="FOS-3T-VLm" secondAttribute="leading" id="RT1-PK-6GR"/>
-                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="top" secondItem="FOS-3T-VLm" secondAttribute="top" id="epa-yw-sS2"/>
-                                                                <constraint firstAttribute="trailing" secondItem="XaZ-I7-YVh" secondAttribute="trailing" id="kFD-8b-CSH"/>
+                                                                <constraint firstAttribute="bottom" secondItem="XaZ-I7-YVh" secondAttribute="bottom" constant="15" id="Csj-Mm-FSW"/>
+                                                                <constraint firstAttribute="trailing" secondItem="muB-bF-7xg" secondAttribute="trailing" id="Ghb-1t-z9K"/>
+                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="leading" secondItem="FOS-3T-VLm" secondAttribute="leading" constant="15" id="RT1-PK-6GR"/>
+                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="top" secondItem="FOS-3T-VLm" secondAttribute="top" constant="15" id="epa-yw-sS2"/>
+                                                                <constraint firstItem="muB-bF-7xg" firstAttribute="top" secondItem="FOS-3T-VLm" secondAttribute="top" id="hY8-lj-2hl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XaZ-I7-YVh" secondAttribute="trailing" constant="15" id="kFD-8b-CSH"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <size key="customSize" width="70" height="70"/>
                                                         <connections>
+                                                            <outlet property="deleteButton" destination="muB-bF-7xg" id="24H-sL-9Qb"/>
                                                             <outlet property="productImageView" destination="XaZ-I7-YVh" id="00z-jW-9bI"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -262,6 +300,7 @@
                         <outlet property="operationButton" destination="hkm-xJ-UZ1" id="Fbh-Hh-iJo"/>
                         <outlet property="productImagesCollectionView" destination="6g9-dC-J7e" id="hOC-MB-EJF"/>
                         <outlet property="productTextView" destination="Reo-Fi-J2D" id="vTY-7J-Zss"/>
+                        <outlet property="undoButton" destination="09a-0C-fCf" id="5Vq-Lp-Fkt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BF5-ee-Xbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -270,6 +309,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
