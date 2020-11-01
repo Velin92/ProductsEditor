@@ -106,13 +106,28 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3di-YR-Me9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductImageCell" id="3di-YR-Me9" customClass="ProductImageCell" customModule="ProductsEditor" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FOS-3T-VLm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XaZ-I7-YVh">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="XaZ-I7-YVh" secondAttribute="bottom" id="Csj-Mm-FSW"/>
+                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="leading" secondItem="FOS-3T-VLm" secondAttribute="leading" id="RT1-PK-6GR"/>
+                                                                <constraint firstItem="XaZ-I7-YVh" firstAttribute="top" secondItem="FOS-3T-VLm" secondAttribute="top" id="epa-yw-sS2"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XaZ-I7-YVh" secondAttribute="trailing" id="kFD-8b-CSH"/>
+                                                            </constraints>
                                                         </collectionViewCellContentView>
+                                                        <size key="customSize" width="70" height="70"/>
+                                                        <connections>
+                                                            <outlet property="productImageView" destination="XaZ-I7-YVh" id="00z-jW-9bI"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

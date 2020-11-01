@@ -33,6 +33,9 @@ class MainCoordinator: Coordinator {
     
     private func goToProductDetail(with product: Product) {
         let vc = ProductDetailViewController.instantiate()
+        let interactor = ProductDetailInteractor(model: product)
+        let presenter = ProductDetailPresenter(view: vc, interactor: interactor)
+        vc.presenter = presenter
         DispatchQueue.main.async {
             self.navigationController.pushViewController(vc, animated: true)
         }
