@@ -10,6 +10,7 @@ import Foundation
 protocol ProductDetailPresenterProtocol: AnyObject {
     func loadView()
     func browseProduct()
+    func manageOperation()
 }
 
 class ProductDetailPresenter {
@@ -31,6 +32,15 @@ class ProductDetailPresenter {
 }
 
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
+    
+    func manageOperation() {
+        if (viewState.operationState == .displaying) {
+            viewState.operationState = .editing
+            updateView()
+            view.startEditing()
+        }
+    }
+    
     func browseProduct() {
         if let url = URL(string: interactor.product.url) {
             view.openUrl(url)

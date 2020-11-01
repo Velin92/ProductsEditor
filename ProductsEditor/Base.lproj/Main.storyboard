@@ -94,10 +94,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-r9-Tfi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="460.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="510.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-N7-IL8">
-                                                <rect key="frame" x="20" y="252" width="374" height="188.5"/>
+                                                <rect key="frame" x="20" y="252" width="374" height="238.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-wb-Nza">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -105,12 +105,12 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Procut name" translatesAutoresizingMaskIntoConstraints="NO" id="Reo-Fi-J2D">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Procut name" translatesAutoresizingMaskIntoConstraints="NO" id="Reo-Fi-J2D">
                                                         <rect key="frame" x="0.0" y="28" width="374" height="35.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhg-1b-x1U">
                                                         <rect key="frame" x="0.0" y="73.5" width="374" height="19.5"/>
@@ -118,12 +118,12 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Merchant name" translatesAutoresizingMaskIntoConstraints="NO" id="KqF-M7-GUo">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Merchant name" translatesAutoresizingMaskIntoConstraints="NO" id="KqF-M7-GUo">
                                                         <rect key="frame" x="0.0" y="103" width="374" height="35.5"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCc-Ru-lzy">
                                                         <rect key="frame" x="37.5" y="148.5" width="299" height="40"/>
@@ -135,22 +135,41 @@
                                                         <state key="normal" title="Browse"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
+                                                                <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="20"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" systemColor="systemBlueColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="didTapBrowseButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="U5I-XI-SxJ"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-so-Jmm">
+                                                        <rect key="frame" x="37.5" y="198.5" width="299" height="40"/>
+                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="uWd-8x-qTi"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                        <state key="normal" title="Delete"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapBrowseButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="QfG-X7-G8w"/>
+                                                            <action selector="didTapDeleteButton:" destination="Cbd-rT-enC" eventType="touchUpInside" id="fRO-0u-0xa"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="Xhg-1b-x1U" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="2xr-eK-sG8"/>
+                                                    <constraint firstItem="S8P-so-Jmm" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="3fZ-kP-ZO6"/>
                                                     <constraint firstItem="Reo-Fi-J2D" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="9hQ-dz-PhF"/>
                                                     <constraint firstItem="KqF-M7-GUo" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="U4q-IE-qeB"/>
                                                     <constraint firstItem="aCc-Ru-lzy" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="t2I-wu-UVQ"/>
@@ -226,10 +245,21 @@
                             <constraint firstItem="IST-wE-IQM" firstAttribute="top" secondItem="fT7-H5-Lvs" secondAttribute="top" id="oWK-wm-gWK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="pwb-MI-1q6"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detail" id="pwb-MI-1q6">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="hkm-xJ-UZ1">
+                            <connections>
+                                <action selector="didTapOnOperationButton:" destination="Cbd-rT-enC" id="ovt-0T-F7Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="browseButton" destination="aCc-Ru-lzy" id="Wdv-T1-WUw"/>
+                        <outlet property="deleteButton" destination="S8P-so-Jmm" id="leA-76-M51"/>
                         <outlet property="merchantTextView" destination="KqF-M7-GUo" id="HbD-7Q-lBC"/>
+                        <outlet property="operationButton" destination="hkm-xJ-UZ1" id="Fbh-Hh-iJo"/>
                         <outlet property="productImagesCollectionView" destination="6g9-dC-J7e" id="hOC-MB-EJF"/>
                         <outlet property="productTextView" destination="Reo-Fi-J2D" id="vTY-7J-Zss"/>
                     </connections>
@@ -243,11 +273,17 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
