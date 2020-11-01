@@ -14,17 +14,32 @@ class ProductImagesCollectionViewManager: NSObject, UICollectionViewDataSource, 
     var isEditing = false
     
     var deleteImageClosure: ((Int)->())?
+    var addImageClosure: (()->())?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
+        if isEditing {
+            return dataSource.count + 1
+        } else {
+            return dataSource.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ProductImageCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setupContent(dataSource[indexPath.item], isEditing: isEditing)
-        cell.deleteClosure = { [weak self] in
-            self?.deleteImageClosure?(indexPath.item)
+        if indexPath.item < dataSource.count {
+            cell.setupContent(dataSource[indexPath.item], isEditing: isEditing)
+            cell.deleteClosure = { [weak self] in
+                self?.deleteImageClosure?(indexPath.item)
+            }
+        } else {
+            cell.setupAddImageContent()
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == dataSource.count {
+            addImageClosure?()
+        }
     }
 }

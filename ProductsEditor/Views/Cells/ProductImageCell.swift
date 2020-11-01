@@ -23,6 +23,11 @@ class ProductImageCell: UICollectionViewCell, ReusableView {
         deleteButton.isHidden = !isEditing
     }
     
+    func setupAddImageContent() {
+        productImageView.image = UIImage(systemName: "plus")
+        deleteButton.isHidden =  true
+    }
+    
     @IBAction func didTapDeleteButton(_ sender: Any) {
         deleteClosure?()
     }

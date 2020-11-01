@@ -14,7 +14,7 @@ protocol ProductDetailViewProtocol: AnyObject {
     func startEditing()
 }
 
-class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismisser, AlertDisplayer, LoaderDisplayer{
+class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismisser, AlertDisplayer, LoaderDisplayer, TextAlertDisplayer {
     
     static let storyboardName = "Main"
     static var storyboardId = "ProductDetailViewController"
@@ -29,6 +29,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     
     var presenter: ProductDetailPresenterProtocol!
     let productImagesCollectionViewManager = ProductImagesCollectionViewManager()
+    var textAlertUpdater = TextAlertUpdater()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +62,14 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     private func setupCollectionView() {
         productImagesCollectionView.collectionViewLayout = ProductImagesFlowLayout()
         productImagesCollectionView.contentInsetAdjustmentBehavior = .always
+        productImagesCollectionView.allowsSelection = true
         productImagesCollectionView.dataSource = productImagesCollectionViewManager
         productImagesCollectionView.delegate = productImagesCollectionViewManager
         productImagesCollectionViewManager.deleteImageClosure =  { [weak self] index in
             self?.presenter.deleteImage(at: index)
+        }
+        productImagesCollectionViewManager.addImageClosure = { [weak self] in
+            self?.presenter.addImage()
         }
         productImagesCollectionView.reloadData()
     }
@@ -148,6 +153,18 @@ extension ProductDetailViewController: UITextViewDelegate {
         }
         else
         {
+            return true
+        }
+    }
+}
+
+extension ProductDetailViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view != self.productImagesCollectionView{
+            return false
+        }else{
+            view.endEditing(true)
             return true
         }
     }

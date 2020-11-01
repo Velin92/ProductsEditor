@@ -28,6 +28,7 @@
 		A71A22C6254E4B4500868916 /* ProductDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A22C5254E4B4500868916 /* ProductDetailViewState.swift */; };
 		A71D09A1254F530500EB4072 /* KeyboardDismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D09A0254F530500EB4072 /* KeyboardDismisser.swift */; };
 		A71D09A6254F5F3800EB4072 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D09A5254F5F3800EB4072 /* AlertDisplayer.swift */; };
+		A71D09AB254F6E1100EB4072 /* TextAlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D09AA254F6E1100EB4072 /* TextAlertDisplayer.swift */; };
 		A737EBC2254DF80900561D1B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC1254DF80900561D1B /* MainCoordinator.swift */; };
 		A737EBC8254DF82200561D1B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC7254DF82200561D1B /* Coordinator.swift */; };
 		A737EBD0254DFED900561D1B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBCF254DFED900561D1B /* Storyboarded.swift */; };
@@ -90,6 +91,7 @@
 		A71A22C5254E4B4500868916 /* ProductDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewState.swift; sourceTree = "<group>"; };
 		A71D09A0254F530500EB4072 /* KeyboardDismisser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismisser.swift; sourceTree = "<group>"; };
 		A71D09A5254F5F3800EB4072 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
+		A71D09AA254F6E1100EB4072 /* TextAlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertDisplayer.swift; sourceTree = "<group>"; };
 		A737EBC1254DF80900561D1B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A737EBC7254DF82200561D1B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A737EBCF254DFED900561D1B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				A71A2299254E359B00868916 /* LoaderDisplayer.swift */,
 				A71D09A0254F530500EB4072 /* KeyboardDismisser.swift */,
 				A71D09A5254F5F3800EB4072 /* AlertDisplayer.swift */,
+				A71D09AA254F6E1100EB4072 /* TextAlertDisplayer.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				A737EBD0254DFED900561D1B /* Storyboarded.swift in Sources */,
 				A737EC00254E195000561D1B /* ProductsListTableViewManager.swift in Sources */,
 				A71A22BC254E486200868916 /* ProductDetailPresenter.swift in Sources */,
+				A71D09AB254F6E1100EB4072 /* TextAlertDisplayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

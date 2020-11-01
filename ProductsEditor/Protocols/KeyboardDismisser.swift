@@ -12,9 +12,10 @@ protocol KeyboardDismisser {
     func setupDismissKeyboardGesture()
 }
 
-extension KeyboardDismisser where Self: UIViewController {
+extension KeyboardDismisser where Self: UIViewController & UIGestureRecognizerDelegate {
     func setupDismissKeyboardGesture() {
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_ :)))
+        tapGesture.delegate = self
         self.view.addGestureRecognizer(tapGesture)
     }
 }
