@@ -26,6 +26,8 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     @IBOutlet weak var browseButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var undoButton: UIButton!
+    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var urlTextView: UITextView!
     
     var presenter: ProductDetailPresenterProtocol!
     let productImagesCollectionViewManager = ProductImagesCollectionViewManager()
@@ -57,6 +59,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     private func setupTextViews() {
         productTextView.delegate = self
         merchantTextView.delegate = self
+        urlTextView.delegate = self
     }
     
     private func setupCollectionView() {
@@ -105,13 +108,14 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
         self.productImagesCollectionView.reloadData()
     }
     
-    private func updateInfos(productName: String, merchantName: String) {
+    private func updateInfos(productName: String, merchantName: String, url: String) {
         productTextView.isEditable = false
         merchantTextView.isEditable = false
         productTextView.backgroundColor = .systemBackground
         merchantTextView.backgroundColor = .systemBackground
         productTextView.text = productName
         merchantTextView.text = merchantName
+        urlTextView.text = url
     }
     
     private func updateDisplayingView(viewState: ProductDetailViewState) {
@@ -120,17 +124,23 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
         browseButton.isHidden = false
         deleteButton.isHidden = true
         undoButton.isHidden = true
-        updateInfos(productName: viewState.productName, merchantName: viewState.merchantName)
+        urlLabel.isHidden = true
+        urlTextView.isHidden = true
+        urlTextView.isEditable = false
+        updateInfos(productName: viewState.productName, merchantName: viewState.merchantName, url: viewState.url)
     }
     
     private func updateEditingView(viewState: ProductDetailViewState) {
         productImagesCollectionViewManager.isEditing = true
+        urlLabel.isHidden = false
+        urlTextView.isHidden = false
         browseButton.isHidden = true
         deleteButton.isHidden = false
         undoButton.isHidden = false
         operationButton.title = "Done"
         productTextView.isEditable = true
         merchantTextView.isEditable = true
+        urlTextView.isEditable = true
         productTextView.backgroundColor = .secondarySystemFill
         merchantTextView.backgroundColor = .secondarySystemFill
     }

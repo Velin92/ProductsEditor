@@ -37,7 +37,12 @@ class ProductDetailPresenter {
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
     func addImage() {
         view.showTextAlert(title: "Add image", description: "Insert a valid image URL", placeholder: "Image URL", confirmation: "Add", cancel: "Cancel", saveCompletion: { [weak self] string in
-            
+            if let _ = URL(string: string) {
+                self?.viewState.images.append(string)
+                self?.updateView()
+            } else {
+                self?.view.showAlert(title: "Alert", description: "Invalid URL")
+            }
         }, cancelCompletion: nil)
     }
     

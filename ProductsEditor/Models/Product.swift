@@ -26,4 +26,12 @@ struct Product {
         self.url = data.url ?? ""
         self.merchant = data.merchant ?? ""
     }
+    
+    init(id: String, title: String, images: [String], url: String, merchant: String) {
+        self.id = id
+        self.title = id
+        self.images = images
+        self.url = url
+        self.merchant = merchant
+    }
 }

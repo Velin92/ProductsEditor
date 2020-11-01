@@ -94,12 +94,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-r9-Tfi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="560.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-N7-IL8">
-                                                <rect key="frame" x="20" y="252" width="374" height="288.5"/>
+                                                <rect key="frame" x="20" y="252" width="374" height="363.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-wb-Nza">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-wb-Nza">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -112,7 +112,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                     </textView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhg-1b-x1U">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xhg-1b-x1U">
                                                         <rect key="frame" x="0.0" y="73.5" width="374" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
@@ -125,8 +125,21 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zLz-Qx-Je1">
+                                                        <rect key="frame" x="0.0" y="148.5" width="374" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Enter URL here" translatesAutoresizingMaskIntoConstraints="NO" id="RHt-Wi-ruA">
+                                                        <rect key="frame" x="0.0" y="178" width="374" height="35.5"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCc-Ru-lzy">
-                                                        <rect key="frame" x="37.5" y="148.5" width="299" height="40"/>
+                                                        <rect key="frame" x="37.5" y="223.5" width="299" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="9xb-Sj-yfw"/>
@@ -146,7 +159,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09a-0C-fCf">
-                                                        <rect key="frame" x="37.5" y="198.5" width="299" height="40"/>
+                                                        <rect key="frame" x="37.5" y="273.5" width="299" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="5gx-eG-mtc"/>
@@ -166,7 +179,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8P-so-Jmm">
-                                                        <rect key="frame" x="37.5" y="248.5" width="299" height="40"/>
+                                                        <rect key="frame" x="37.5" y="323.5" width="299" height="40"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="uWd-8x-qTi"/>
@@ -192,6 +205,8 @@
                                                     <constraint firstItem="Reo-Fi-J2D" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="9hQ-dz-PhF"/>
                                                     <constraint firstItem="09a-0C-fCf" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="QkI-Cg-gAo"/>
                                                     <constraint firstItem="KqF-M7-GUo" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="U4q-IE-qeB"/>
+                                                    <constraint firstItem="zLz-Qx-Je1" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="dYx-YF-KWh"/>
+                                                    <constraint firstItem="RHt-Wi-ruA" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="fFS-2C-1qE"/>
                                                     <constraint firstItem="aCc-Ru-lzy" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" multiplier="0.8" id="t2I-wu-UVQ"/>
                                                     <constraint firstItem="3nF-wb-Nza" firstAttribute="width" secondItem="Ep0-N7-IL8" secondAttribute="width" id="v6M-T7-vnO"/>
                                                 </constraints>
@@ -301,6 +316,8 @@
                         <outlet property="productImagesCollectionView" destination="6g9-dC-J7e" id="hOC-MB-EJF"/>
                         <outlet property="productTextView" destination="Reo-Fi-J2D" id="vTY-7J-Zss"/>
                         <outlet property="undoButton" destination="09a-0C-fCf" id="5Vq-Lp-Fkt"/>
+                        <outlet property="urlLabel" destination="zLz-Qx-Je1" id="Cir-zr-IWK"/>
+                        <outlet property="urlTextView" destination="RHt-Wi-ruA" id="Mg0-Ty-s5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BF5-ee-Xbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

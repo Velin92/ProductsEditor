@@ -20,6 +20,7 @@ struct ProductDetailViewState {
     
     var productName: String = ""
     var merchantName: String = ""
+    var url: String = ""
     
     var operationState: OperationState = .displaying
     
@@ -31,5 +32,6 @@ struct ProductDetailViewState {
         self.images = product.images
         self.productName = product.title
         self.merchantName = product.merchant
+        self.url = product.url
     }
 }

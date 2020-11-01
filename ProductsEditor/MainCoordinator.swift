@@ -33,7 +33,7 @@ class MainCoordinator: Coordinator {
     
     private func goToProductDetail(with product: Product) {
         let vc = ProductDetailViewController.instantiate()
-        let interactor = ProductDetailInteractor(model: product)
+        let interactor = ProductDetailInteractor(model: product, service: APIClient())
         let presenter = ProductDetailPresenter(view: vc, interactor: interactor)
         vc.presenter = presenter
         DispatchQueue.main.async {

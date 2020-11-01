@@ -13,7 +13,7 @@ protocol ProductsListAPI {
 }
 
 protocol ProductDetailAPI {
-    func updateProduct(_ product: Product,  completion: @escaping (AFResult<ProductsListResponse>) -> Void)
+    func updateProduct(_ product: Product,  completion: @escaping (AFResult<ProductResponse>) -> Void)
 }
 
 class APIClient {
@@ -35,7 +35,7 @@ extension APIClient: ProductsListAPI {
 }
 
 extension APIClient: ProductDetailAPI {
-    func updateProduct(_ product: Product, completion: @escaping (AFResult<ProductsListResponse>) -> Void) {
+    func updateProduct(_ product: Product, completion: @escaping (AFResult<ProductResponse>) -> Void) {
         let body = ProductUpdateRequest(from: product)
         request(APIRouter.updateProduct(request: body), completion: completion)
     }
