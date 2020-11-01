@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70B49F6254F258C00648B7E /* UIView+customInspectableProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B49F5254F258C00648B7E /* UIView+customInspectableProperties.swift */; };
+		A70B49FB254F322200648B7E /* ProductUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B49FA254F322200648B7E /* ProductUpdateRequest.swift */; };
+		A70B4A00254F38B400648B7E /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B49FF254F38B400648B7E /* ProductResponse.swift */; };
 		A71A226A254E1C1400868916 /* ProductCellViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2269254E1C1400868916 /* ProductCellViewState.swift */; };
 		A71A2273254E204200868916 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2272254E204200868916 /* APIRouter.swift */; };
 		A71A227C254E21AC00868916 /* ProductListOffsetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A227B254E21AC00868916 /* ProductListOffsetRequest.swift */; };
@@ -64,6 +67,9 @@
 		5245FA03BC9C17645614867D /* Pods_ProductsEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductsEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		981DCE265D70C28D90DF6C82 /* Pods-ProductsEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsEditor.debug.xcconfig"; path = "Target Support Files/Pods-ProductsEditor/Pods-ProductsEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		99AAD3D0FD975156208B9468 /* Pods-ProductsEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsEditor.release.xcconfig"; path = "Target Support Files/Pods-ProductsEditor/Pods-ProductsEditor.release.xcconfig"; sourceTree = "<group>"; };
+		A70B49F5254F258C00648B7E /* UIView+customInspectableProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+customInspectableProperties.swift"; sourceTree = "<group>"; };
+		A70B49FA254F322200648B7E /* ProductUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUpdateRequest.swift; sourceTree = "<group>"; };
+		A70B49FF254F38B400648B7E /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		A71A2269254E1C1400868916 /* ProductCellViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewState.swift; sourceTree = "<group>"; };
 		A71A2272254E204200868916 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		A71A227B254E21AC00868916 /* ProductListOffsetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListOffsetRequest.swift; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A71A227B254E21AC00868916 /* ProductListOffsetRequest.swift */,
+				A70B49FA254F322200648B7E /* ProductUpdateRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A71A228B254E267900868916 /* ProductsListResponse.swift */,
+				A70B49FF254F38B400648B7E /* ProductResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				A737EBE1254E0BAA00561D1B /* UITableView+dequeueReusableCell.swift */,
 				A71A2280254E250800868916 /* JSONDecoder+decodeResponse.swift */,
 				A71A22B1254E42D200868916 /* UICollectionView+dequeueReusableCell.swift */,
+				A70B49F5254F258C00648B7E /* UIView+customInspectableProperties.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +520,7 @@
 				A71A2286254E252400868916 /* APIClient.swift in Sources */,
 				A737EBFA254E18C400561D1B /* ProductCell.swift in Sources */,
 				A71A22AD254E42B400868916 /* ProductImageCell.swift in Sources */,
+				A70B49FB254F322200648B7E /* ProductUpdateRequest.swift in Sources */,
 				A71A2281254E250800868916 /* JSONDecoder+decodeResponse.swift in Sources */,
 				A71A226A254E1C1400868916 /* ProductCellViewState.swift in Sources */,
 				A737EBC2254DF80900561D1B /* MainCoordinator.swift in Sources */,
@@ -523,9 +533,11 @@
 				A71A22C6254E4B4500868916 /* ProductDetailViewState.swift in Sources */,
 				A71A22B2254E42D200868916 /* UICollectionView+dequeueReusableCell.swift in Sources */,
 				A7A7F409254DF0D900D2CCCE /* SceneDelegate.swift in Sources */,
+				A70B49F6254F258C00648B7E /* UIView+customInspectableProperties.swift in Sources */,
 				A71A22B7254E468400868916 /* ProductImagesCollectionViewManager.swift in Sources */,
 				A71A229A254E359B00868916 /* LoaderDisplayer.swift in Sources */,
 				A71A227C254E21AC00868916 /* ProductListOffsetRequest.swift in Sources */,
+				A70B4A00254F38B400648B7E /* ProductResponse.swift in Sources */,
 				A737EBF1254E118000561D1B /* ProductsListInteractor.swift in Sources */,
 				A737EBE2254E0BAA00561D1B /* UITableView+dequeueReusableCell.swift in Sources */,
 				A71A228C254E267900868916 /* ProductsListResponse.swift in Sources */,

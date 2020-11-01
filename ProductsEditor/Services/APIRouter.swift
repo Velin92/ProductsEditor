@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 
 enum HTTPHeaderField: String {
-  case authentication = "Authorization"
-  case contentType = "Content-Type"
-  case acceptType = "Accept"
-  case acceptEncoding = "Accept-Encoding"
+    case authentication = "Authorization"
+    case contentType = "Content-Type"
+    case acceptType = "Accept"
+    case acceptEncoding = "Accept-Encoding"
 }
 
 enum ContentType: String {
-  case json = "application/json"
+    case json = "application/json"
 }
 
 enum Constants {
@@ -25,10 +25,11 @@ enum Constants {
 
 enum APIRouter: URLRequestConvertible {
     case productsList(offsetRequest: ProductsListOffsetRequest)
+    case updateProduct(request: ProductUpdateRequest)
     
     var method: HTTPMethod {
         switch self {
-        case .productsList:
+        case .productsList, .updateProduct:
             return .post
         }
     }
@@ -38,6 +39,8 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .productsList:
             return "/products/offset"
+        case .updateProduct:
+            return "/product/update"
         }
     }
     
@@ -81,6 +84,8 @@ enum APIRouter: URLRequestConvertible {
     private func encodeRequest() throws -> Data  {
         switch self {
         case .productsList(let request):
+            return try JSONEncoder().encode(request)
+        case .updateProduct(let request):
             return try JSONEncoder().encode(request)
         }
     }

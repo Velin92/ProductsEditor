@@ -11,11 +11,3 @@ import Foundation
 struct ProductsListResponse: Codable {
     let posts: [ProductData]?
 }
-
-// MARK: - Post
-struct ProductData: Codable {
-    let id, createdAt, updatedAt, title: String?
-    let images: [String]?
-    let url: String?
-    let merchant: String?
-}

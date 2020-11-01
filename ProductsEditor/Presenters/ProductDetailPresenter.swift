@@ -9,6 +9,7 @@ import Foundation
 
 protocol ProductDetailPresenterProtocol: AnyObject {
     func loadView()
+    func browseProduct()
 }
 
 class ProductDetailPresenter {
@@ -17,7 +18,7 @@ class ProductDetailPresenter {
     weak var view: ProductDetailView!
     let interactor: ProductDetailInteractorProtocol
     
-    var viewState = ProductDetailViewState(images: [])
+    var viewState = ProductDetailViewState()
     
     init(view: ProductDetailView, interactor: ProductDetailInteractorProtocol) {
         self.view = view
@@ -30,8 +31,14 @@ class ProductDetailPresenter {
 }
 
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
+    func browseProduct() {
+        if let url = URL(string: interactor.product.url) {
+            view.openUrl(url)
+        }
+    }
+    
     func loadView() {
-        viewState.images = interactor.product.images
+        viewState = ProductDetailViewState(from: interactor.product)
         updateView()
     }
 }
