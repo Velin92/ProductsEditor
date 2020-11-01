@@ -14,6 +14,7 @@ enum ProductsListError: Error {
 
 protocol ProductsListInteractorProtocol: AnyObject {
     func fetchProducts(skip: Int, bulk: Int, completion: @escaping (Result<[Product], ProductsListError>)->())
+    func getProduct(at index: Int) -> Product
 }
 
 class ProductsListInteractor {
@@ -28,6 +29,11 @@ class ProductsListInteractor {
 }
 
 extension ProductsListInteractor: ProductsListInteractorProtocol {
+    
+    func getProduct(at index: Int) -> Product {
+        return products[index]
+    }
+    
     func fetchProducts(skip: Int, bulk: Int, completion: @escaping (Result<[Product], ProductsListError>) -> ()) {
         service.fetchProductsList(skip: skip, bulk: bulk) { [weak self] result in
             switch result {

@@ -21,7 +21,21 @@ class MainCoordinator: Coordinator {
         let vc = ProductsListViewController.instantiate()
         let interactor = ProductsListInteractor(service: APIClient())
         let presenter = ProductsListPresenter(view: vc, interactor: interactor)
+        
+        presenter.goToProductDetailClosure = {
+            [weak self] product in
+            self?.goToProductDetail(with: product)
+        }
+        
         vc.presenter = presenter
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    private func goToProductDetail(with product: Product) {
+        let vc = ProductDetailViewController.instantiate()
+        DispatchQueue.main.async {
+            self.navigationController.pushViewController(vc, animated: true)
+        }
+    }
+    
 }

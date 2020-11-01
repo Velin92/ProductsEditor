@@ -31,6 +31,9 @@ class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplaye
     private func setupTableView() {
         productsTableView.delegate = productsListManager
         productsTableView.dataSource = productsListManager
+        productsListManager.didSelectRowClosure = { [weak self] index in
+            self?.presenter.didSelectProduct(at: index)
+        }
         productsTableView.reloadData()
     }
 }

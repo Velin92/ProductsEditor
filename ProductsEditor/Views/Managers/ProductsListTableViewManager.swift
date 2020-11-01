@@ -12,6 +12,8 @@ class ProductsListTableViewManager: NSObject, UITableViewDelegate, UITableViewDa
     
     var dataSource: [ProductCellViewState] = []
     
+    var didSelectRowClosure: ((Int)->())?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -20,5 +22,9 @@ class ProductsListTableViewManager: NSObject, UITableViewDelegate, UITableViewDa
         let cell: ProductCell = tableView.dequeueReusableCell(for: indexPath)
         cell.setupContent(dataSource[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectRowClosure?(indexPath.row)
     }
 }
