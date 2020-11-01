@@ -13,6 +13,8 @@
 		A71A2281254E250800868916 /* JSONDecoder+decodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2280254E250800868916 /* JSONDecoder+decodeResponse.swift */; };
 		A71A2286254E252400868916 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2285254E252400868916 /* APIClient.swift */; };
 		A71A228C254E267900868916 /* ProductsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A228B254E267900868916 /* ProductsListResponse.swift */; };
+		A71A2295254E2FB000868916 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2294254E2FB000868916 /* Product.swift */; };
+		A71A229A254E359B00868916 /* LoaderDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A2299254E359B00868916 /* LoaderDisplayer.swift */; };
 		A737EBC2254DF80900561D1B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC1254DF80900561D1B /* MainCoordinator.swift */; };
 		A737EBC8254DF82200561D1B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBC7254DF82200561D1B /* Coordinator.swift */; };
 		A737EBD0254DFED900561D1B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A737EBCF254DFED900561D1B /* Storyboarded.swift */; };
@@ -60,6 +62,8 @@
 		A71A2280254E250800868916 /* JSONDecoder+decodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+decodeResponse.swift"; sourceTree = "<group>"; };
 		A71A2285254E252400868916 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A71A228B254E267900868916 /* ProductsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListResponse.swift; sourceTree = "<group>"; };
+		A71A2294254E2FB000868916 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A71A2299254E359B00868916 /* LoaderDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderDisplayer.swift; sourceTree = "<group>"; };
 		A737EBC1254DF80900561D1B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A737EBC7254DF82200561D1B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A737EBCF254DFED900561D1B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -154,12 +158,21 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		A71A2293254E2FA400868916 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A71A2294254E2FB000868916 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A737EBC6254DF81500561D1B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				A737EBC7254DF82200561D1B /* Coordinator.swift */,
 				A737EBCF254DFED900561D1B /* Storyboarded.swift */,
 				A737EBD8254E0B5D00561D1B /* ReusableView.swift */,
+				A71A2299254E359B00868916 /* LoaderDisplayer.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -240,6 +253,7 @@
 		A7A7F405254DF0D900D2CCCE /* ProductsEditor */ = {
 			isa = PBXGroup;
 			children = (
+				A71A2293254E2FA400868916 /* Models */,
 				A71A2271254E202C00868916 /* Services */,
 				A71A2268254E1BD900868916 /* ViewStates */,
 				A737EBEF254E116300561D1B /* Interactors */,
@@ -459,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71A2295254E2FB000868916 /* Product.swift in Sources */,
 				A7A7F40B254DF0D900D2CCCE /* ProductsListViewController.swift in Sources */,
 				A71A2286254E252400868916 /* APIClient.swift in Sources */,
 				A737EBFA254E18C400561D1B /* ProductCell.swift in Sources */,
@@ -470,6 +485,7 @@
 				A7A7F407254DF0D900D2CCCE /* AppDelegate.swift in Sources */,
 				A71A2273254E204200868916 /* APIRouter.swift in Sources */,
 				A7A7F409254DF0D900D2CCCE /* SceneDelegate.swift in Sources */,
+				A71A229A254E359B00868916 /* LoaderDisplayer.swift in Sources */,
 				A71A227C254E21AC00868916 /* ProductListOffsetRequest.swift in Sources */,
 				A737EBF1254E118000561D1B /* ProductsListInteractor.swift in Sources */,
 				A737EBE2254E0BAA00561D1B /* UITableView+dequeueReusableCell.swift in Sources */,

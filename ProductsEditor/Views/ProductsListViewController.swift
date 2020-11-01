@@ -8,10 +8,10 @@
 import UIKit
 
 protocol ProductsListViewProtocol: AnyObject {
-    
+    func updateViewState(_ viewState: ProductsListViewState)
 }
 
-class ProductsListViewController: UIViewController, Storyboarded {
+class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplayer {
     
     static let storyboardName = "Main"
     static let storyboardId = "ProductsListViewController"
@@ -25,6 +25,7 @@ class ProductsListViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
+        presenter?.loadProducts()
     }
     
     private func setupTableView() {
@@ -36,5 +37,11 @@ class ProductsListViewController: UIViewController, Storyboarded {
 
 extension ProductsListViewController: ProductsListViewProtocol {
     
+    func updateViewState(_ viewState: ProductsListViewState) {
+        DispatchQueue.main.async {
+            self.productsListManager.dataSource = viewState
+            self.productsTableView.reloadData()
+        }
+    }
 }
 

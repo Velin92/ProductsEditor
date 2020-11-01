@@ -10,4 +10,11 @@ import Foundation
 struct ProductCellViewState {
     let title: String
     let defaultImage: String
+    
+    init(from product: Product) {
+        self.title = product.title
+        self.defaultImage = product.images.first ?? ""
+    }
 }
+
+typealias ProductsListViewState = [ProductCellViewState]
