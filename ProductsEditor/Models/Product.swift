@@ -19,11 +19,13 @@ struct Product {
         guard let id = data.id,
               !id.isEmpty,
               let title = data.title,
-              !title.isEmpty else {return nil}
+              !title.isEmpty,
+              let url = data.url,
+              url.isValidUrl else {return nil}
         self.id = id
         self.title = title
         self.images = data.images ?? []
-        self.url = data.url ?? ""
+        self.url = url
         self.merchant = data.merchant ?? ""
     }
     

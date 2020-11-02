@@ -11,7 +11,7 @@ protocol ProductsListViewProtocol: AnyObject {
     func updateViewState(_ viewState: ProductsListViewState)
 }
 
-class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplayer {
+class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplayer, AlertDisplayer {
     
     static let storyboardName = "Main"
     static let storyboardId = "ProductsListViewController"
@@ -36,11 +36,18 @@ class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplaye
         presenter.addNewProduct()
     }
     
+    @IBAction func didTapRefreshButton(_ sender: Any) {
+        presenter.loadProducts()
+    }
+    
     private func setupTableView() {
         productsTableView.delegate = productsListManager
         productsTableView.dataSource = productsListManager
         productsListManager.didSelectRowClosure = { [weak self] index in
             self?.presenter.didSelectProduct(at: index)
+        }
+        productsListManager.didReachEnd = { [weak self] in
+            self?.presenter.loadNextPage()
         }
         productsTableView.reloadData()
     }

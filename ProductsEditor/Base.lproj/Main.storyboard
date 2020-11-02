@@ -73,6 +73,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Products" id="z1R-Eg-lq8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="i4D-EZ-lPX">
+                            <connections>
+                                <action selector="didTapRefreshButton:" destination="BYZ-38-t0r" id="k2a-Jx-XDK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="brz-sp-bby">
                             <connections>
                                 <action selector="didTapAddButton:" destination="BYZ-38-t0r" id="Kug-LN-cdp"/>
