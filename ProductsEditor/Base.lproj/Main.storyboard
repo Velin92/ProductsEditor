@@ -134,7 +134,7 @@
                                                         <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zLz-Qx-Je1">
                                                         <rect key="frame" x="0.0" y="148.5" width="374" height="19.5"/>
@@ -326,6 +326,7 @@
                         <outlet property="operationButton" destination="hkm-xJ-UZ1" id="Fbh-Hh-iJo"/>
                         <outlet property="productImagesCollectionView" destination="6g9-dC-J7e" id="hOC-MB-EJF"/>
                         <outlet property="productTextView" destination="Reo-Fi-J2D" id="vTY-7J-Zss"/>
+                        <outlet property="scrollView" destination="IST-wE-IQM" id="0O5-Up-3Kr"/>
                         <outlet property="undoButton" destination="09a-0C-fCf" id="5Vq-Lp-Fkt"/>
                         <outlet property="urlLabel" destination="zLz-Qx-Je1" id="Cir-zr-IWK"/>
                         <outlet property="urlTextView" destination="RHt-Wi-ruA" id="Mg0-Ty-s5S"/>

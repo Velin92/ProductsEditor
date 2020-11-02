@@ -29,6 +29,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var urlTextView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var presenter: ProductDetailPresenterProtocol!
     let productImagesCollectionViewManager = ProductImagesCollectionViewManager()
@@ -39,6 +40,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
         setupTextViews()
         setupDismissKeyboardGesture()
         setupCollectionView()
+        setupScrollView()
         presenter.loadView()
     }
     
@@ -56,6 +58,27 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     
     @IBAction func didTapUndoButton(_ sender: Any) {
         presenter.resetView()
+    }
+    
+    private func setupScrollView() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            scrollView.contentInset = .zero
+        } else {
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
     }
     
     private func setupTextViews() {
@@ -177,11 +200,10 @@ extension ProductDetailViewController: UITextViewDelegate {
 extension ProductDetailViewController: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if touch.view != self.productImagesCollectionView{
-            return false
-        }else{
-            view.endEditing(true)
+        if touch.view == self.productImagesCollectionView{
             return true
         }
+        view.endEditing(true)
+        return false
     }
 }
