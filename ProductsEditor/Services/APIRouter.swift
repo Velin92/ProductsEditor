@@ -24,12 +24,13 @@ enum Constants {
 }
 
 enum APIRouter: URLRequestConvertible {
-    case productsList(offsetRequest: ProductsListOffsetRequest)
+    case productsList(request: ProductsListOffsetRequest)
     case updateProduct(request: ProductUpdateRequest)
+    case deleteProduct(request: ProductDeleteRequest)
     
     var method: HTTPMethod {
         switch self {
-        case .productsList, .updateProduct:
+        case .productsList, .updateProduct, .deleteProduct:
             return .post
         }
     }
@@ -41,6 +42,8 @@ enum APIRouter: URLRequestConvertible {
             return "/products/offset"
         case .updateProduct:
             return "/product/update"
+        case .deleteProduct:
+            return "/product/delete"
         }
     }
     
@@ -86,6 +89,8 @@ enum APIRouter: URLRequestConvertible {
         case .productsList(let request):
             return try JSONEncoder().encode(request)
         case .updateProduct(let request):
+            return try JSONEncoder().encode(request)
+        case .deleteProduct(let request):
             return try JSONEncoder().encode(request)
         }
     }

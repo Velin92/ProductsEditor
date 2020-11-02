@@ -35,6 +35,11 @@ class MainCoordinator: Coordinator {
         let vc = ProductDetailViewController.instantiate()
         let interactor = ProductDetailInteractor(model: product, service: APIClient())
         let presenter = ProductDetailPresenter(view: vc, interactor: interactor)
+        presenter.goBackClosure = { [weak self] in
+            DispatchQueue.main.async {
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
         vc.presenter = presenter
         DispatchQueue.main.async {
             self.navigationController.pushViewController(vc, animated: true)

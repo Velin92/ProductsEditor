@@ -15,6 +15,7 @@ enum ProductDetailError: Error {
 protocol ProductDetailInteractorProtocol: AnyObject {
     var product: Product {get}
     func updateProduct(name: String, merchant: String, url: String, images: [String], completion:@escaping ((Result<Product, ProductDetailError>)->()))
+    func deleteProduct(completion:@escaping ((Result<Void, ProductDetailError>)->()))
 }
 
 class ProductDetailInteractor {
@@ -29,6 +30,18 @@ class ProductDetailInteractor {
 }
 
 extension ProductDetailInteractor: ProductDetailInteractorProtocol {
+    
+    func deleteProduct(completion:@escaping ((Result<Void, ProductDetailError>)->())) {
+        service.deleteProduct(with: product.id) { result in
+            switch result {
+            case .success:
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(.genericError(error: error)))
+            }
+        }
+    }
+    
     func updateProduct(name: String, merchant: String, url: String, images: [String], completion:@escaping ((Result<Product, ProductDetailError>)->())) {
         let newProduct = Product(id: product.id, title: name, images: images, url: url, merchant: merchant)
         service.updateProduct(newProduct) { [weak self] result in

@@ -15,6 +15,7 @@ protocol ProductDetailPresenterProtocol: AnyObject {
     func resetView()
     func addImage()
     func updateDetails(name: String?, merchant: String?, url: String?)
+    func delete()
 }
 
 class ProductDetailPresenter {
@@ -22,8 +23,9 @@ class ProductDetailPresenter {
     typealias ProductDetailView = ProductDetailViewProtocol & AlertDisplayer & LoaderDisplayer & TextAlertDisplayer
     weak var view: ProductDetailView!
     let interactor: ProductDetailInteractorProtocol
-    
     var viewState = ProductDetailViewState()
+    
+    var goBackClosure: (()->())?
     
     init(view: ProductDetailView, interactor: ProductDetailInteractorProtocol) {
         self.view = view
@@ -36,6 +38,23 @@ class ProductDetailPresenter {
 }
 
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
+    
+    func delete() {
+        view.showAlert(title: "Delete", description: "Are you sure you want to delete this product? This operation cannot be undone", confirmation: "Delete", cancel: "Cancel", isDestructive: true, confirmCompletion: { [weak self] in
+            self?.executeDelete()
+        }, cancelCompletion: nil)
+    }
+    
+    private func executeDelete() {
+        interactor.deleteProduct() { [weak self] result in
+            switch result {
+            case .success:
+                self?.goBackClosure?()
+            case .failure:
+                self?.view.showAlert(title: "Alert", description: "Could not complete the operation")
+            }
+        }
+    }
     
     func updateDetails(name: String?, merchant: String?, url: String?){
         guard let name = name,

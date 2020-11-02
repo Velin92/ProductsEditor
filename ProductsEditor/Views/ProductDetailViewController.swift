@@ -51,6 +51,7 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
     }
     
     @IBAction func didTapDeleteButton(_ sender: Any) {
+        presenter.delete()
     }
     
     @IBAction func didTapUndoButton(_ sender: Any) {
