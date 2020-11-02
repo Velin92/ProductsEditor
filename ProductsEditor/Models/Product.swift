@@ -29,7 +29,7 @@ struct Product {
     
     init(id: String, title: String, images: [String], url: String, merchant: String) {
         self.id = id
-        self.title = id
+        self.title = title
         self.images = images
         self.url = url
         self.merchant = merchant

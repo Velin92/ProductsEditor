@@ -12,6 +12,7 @@ protocol ProductDetailViewProtocol: AnyObject {
     func updateViewState(_ viewState: ProductDetailViewState)
     func openUrl(_ url: URL)
     func startEditing()
+    func requestDetails()
 }
 
 class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismisser, AlertDisplayer, LoaderDisplayer, TextAlertDisplayer {
@@ -79,6 +80,10 @@ class ProductDetailViewController: UIViewController, Storyboarded, KeyboardDismi
 }
 
 extension ProductDetailViewController: ProductDetailViewProtocol {
+    
+    func requestDetails() {
+        presenter?.updateDetails(name: productTextView.text, merchant: merchantTextView.text, url: urlTextView.text)
+    }
     
     func startEditing() {
         DispatchQueue.main.async {
