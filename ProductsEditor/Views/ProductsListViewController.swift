@@ -25,6 +25,10 @@ class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplaye
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.loadProducts()
     }
     
