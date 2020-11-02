@@ -141,8 +141,8 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
         urlLabel.isHidden = false
         urlTextView.isHidden = false
         browseButton.isHidden = true
-        deleteButton.isHidden = false
-        undoButton.isHidden = false
+        deleteButton.isHidden = viewState.operationState == .adding
+        undoButton.isHidden = viewState.operationState == .adding
         operationButton.title = "Done"
         productTextView.isEditable = true
         merchantTextView.isEditable = true

@@ -10,6 +10,7 @@ import Foundation
 protocol ProductsListPresenterProtocol: AnyObject {
     func loadProducts()
     func didSelectProduct(at index: Int)
+    func addNewProduct()
 }
 
 class ProductsListPresenter {
@@ -19,7 +20,7 @@ class ProductsListPresenter {
     weak var view: ProductsListView!
     let interactor: ProductsListInteractorProtocol
     
-    var goToProductDetailClosure: ((Product)->())?
+    var goToProductDetailClosure: ((Product?)->())?
     
     var viewState: ProductsListViewState = []
     
@@ -34,6 +35,11 @@ class ProductsListPresenter {
 }
 
 extension ProductsListPresenter: ProductsListPresenterProtocol {
+    
+    func addNewProduct() {
+        goToProductDetailClosure?(nil)
+    }
+    
     func didSelectProduct(at index: Int) {
         let product = interactor.getProduct(at: index)
         goToProductDetailClosure?(product)

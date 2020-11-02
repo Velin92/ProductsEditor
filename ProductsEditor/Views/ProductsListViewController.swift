@@ -29,7 +29,11 @@ class ProductsListViewController: UIViewController, Storyboarded, LoaderDisplaye
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.loadProducts()
+        presenter.loadProducts()
+    }
+    
+    @IBAction func didTapAddButton(_ sender: Any) {
+        presenter.addNewProduct()
     }
     
     private func setupTableView() {

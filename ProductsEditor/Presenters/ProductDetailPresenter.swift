@@ -78,7 +78,7 @@ extension ProductDetailPresenter: ProductDetailPresenterProtocol {
     
     func addImage() {
         view.showTextAlert(title: "Add image", description: "Insert a valid image URL", placeholder: "Image URL", confirmation: "Add", cancel: "Cancel", saveCompletion: { [weak self] string in
-            if let _ = URL(string: string) {
+            if string.isValidUrl {
                 self?.viewState.images.append(string)
                 self?.updateView()
             } else {
@@ -117,13 +117,17 @@ extension ProductDetailPresenter: ProductDetailPresenterProtocol {
     }
     
     func browseProduct() {
-        if let url = URL(string: interactor.product.url) {
+        if let product = interactor.product, let url = product.url.asUrl {
             view.openUrl(url)
         }
     }
     
     func loadView() {
-        viewState = ProductDetailViewState(from: interactor.product)
+        if let product = interactor.product {
+            viewState = ProductDetailViewState(from: product)
+        } else {
+            viewState = ProductDetailViewState()
+        }
         updateView()
     }
 }

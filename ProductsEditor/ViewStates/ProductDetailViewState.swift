@@ -22,7 +22,7 @@ struct ProductDetailViewState {
     var merchantName: String = ""
     var url: String = ""
     
-    var operationState: OperationState = .displaying
+    var operationState: OperationState = .adding
     
     init() {
         
@@ -33,5 +33,6 @@ struct ProductDetailViewState {
         self.productName = product.title
         self.merchantName = product.merchant
         self.url = product.url
+        self.operationState = .displaying
     }
 }
