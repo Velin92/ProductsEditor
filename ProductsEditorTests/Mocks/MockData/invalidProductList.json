@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "createdAt": "2020-08-14T20:17:23.123Z",
+      "updatedAt": "2020-11-01T18:37:16.665Z",
+      "title": "xxxxtestsdfsdsdfs",
+      "images": [],
+      "url": "abcd",
+      "merchant": "dddd"
+    },
+    {
+      "id": "75f5450a-9130-4d91-999e-ccb17cbe3a9b",
+      "createdAt": "2020-08-14T20:17:23.118Z",
+      "updatedAt": "2020-08-14T20:17:23.118Z",
+      "title": "Ultra High Rise Ankle Straight Jeans",
+      "images": [],
+      "url": "",
+      "merchant": "Abercrombie & Fitch"
+    },
+    {
+      "id": "0ca90176-0711-4839-8fc1-27fc02bcd7da",
+      "createdAt": "2020-08-14T20:17:23.113Z",
+      "updatedAt": "2020-11-02T00:24:03.668Z",
+      "title": "",
+      "images": [
+        "https://media-live.byredo.com/media/catalog/product/optimized/8/5/8529df057ba542031c76db2227539212ccfb359560579b72c48c9f95905e385f/mob_la-selection-nomade-3x12-ml_1_1.jpg"
+      ],
+      "url": "https://www.byredo.com/us_en/la-selection-nomade-eau-de-parfum-3x12ml",
+      "merchant": ""
+    }
+  ]
+}

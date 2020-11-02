@@ -22,6 +22,42 @@ class ProductsEditorTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testInvalidProductList() throws {
+        let mockService = MockedService(mockedJson: "invalidProductList", isFailureTest: false)
+        let mockVc = MockedProductsListViewController()
+        let interactor = ProductsListInteractor(service: mockService)
+        let presenter = ProductsListPresenter(view: mockVc, interactor: interactor)
+        presenter.loadProducts()
+        XCTAssert(mockVc.viewState != nil)
+        XCTAssert(mockVc.viewState?.isEmpty ?? false)
+        XCTAssert(mockVc.alertTitle == nil)
+        XCTAssert(mockVc.alertDescription == nil)
+    }
+    
+    func testErrorProductList() throws {
+        let mockService = MockedService(mockedJson: "", isFailureTest: true)
+        let mockVc = MockedProductsListViewController()
+        let interactor = ProductsListInteractor(service: mockService)
+        let presenter = ProductsListPresenter(view: mockVc, interactor: interactor)
+        presenter.loadProducts()
+        XCTAssert(mockVc.alertTitle != nil)
+        XCTAssert(mockVc.alertDescription != nil)
+    }
+    
+    func testSuccesfulProductList() throws {
+        let mockService = MockedService(mockedJson: "validProductList", isFailureTest: false)
+        let mockVc = MockedProductsListViewController()
+        let interactor = ProductsListInteractor(service: mockService)
+        let presenter = ProductsListPresenter(view: mockVc, interactor: interactor)
+        presenter.loadProducts()
+        XCTAssert(mockVc.alertTitle == nil)
+        XCTAssert(mockVc.alertDescription == nil)
+        XCTAssert(mockVc.viewState != nil)
+        if let viewState = mockVc.viewState {
+            XCTAssert(viewState.count == 3)
+        }
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

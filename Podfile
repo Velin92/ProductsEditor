@@ -10,3 +10,7 @@ end
 target 'ProductsEditor' do
 	sharedPods
 end
+
+target 'ProductsEditorTests' do
+  sharedPods
+end
