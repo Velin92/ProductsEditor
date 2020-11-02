@@ -15,6 +15,7 @@ protocol ProductsListAPI {
 protocol ProductDetailAPI {
     func updateProduct(_ product: Product,  completion: @escaping (AFResult<ProductResponse>) -> Void)
     func deleteProduct(with id: String, completion:  @escaping (AFResult<ProductResponse>) -> Void)
+    func createProduct(_ product: Product,  completion: @escaping (AFResult<ProductResponse>) -> Void)
 }
 
 class APIClient {
@@ -36,6 +37,12 @@ extension APIClient: ProductsListAPI {
 }
 
 extension APIClient: ProductDetailAPI {
+    
+    func createProduct(_ product: Product,  completion: @escaping (AFResult<ProductResponse>) -> Void) {
+        let body = ProductCreateRequest(from: product)
+        request(APIRouter.createProduct(request: body), completion: completion)
+    }
+
     func deleteProduct(with id: String, completion: @escaping (AFResult<ProductResponse>) -> Void) {
         request(APIRouter.deleteProduct(request: ProductDeleteRequest(id: id)), completion: completion)
     }
