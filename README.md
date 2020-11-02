@@ -32,7 +32,9 @@ However new products can be added, and the pre-existing ones can be modified or 
 I don't want to go too much in detail on how the functionalities are accessed, since I would like to have feedback on the UX, and I feel that "spoiling" how does the application work would make the evaluation of the UX's immediacy less reliable.
 
 The projects inclues 2 Pods:
+
 -Kingfisher: for asynchronous and easy image fetching from URLs
+
 -Alamofire: I like how is easy to build APIRouter systems and requests through the use of this library.
 
 The projects also feature some Unit Testing for the fetching functionalit, and full dark mode support.
